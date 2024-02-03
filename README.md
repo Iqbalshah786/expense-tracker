@@ -17,5 +17,6 @@ This is a React-based Expense Tracker. Built using React Hook Form and Zod for s
 
 ## Languages and Tools
 
-- [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript that compiles to plain JavaScript.
+- [TypeScript]([![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+) - A typed superset of JavaScript that compiles to plain JavaScript.
   
