@@ -1,22 +1,31 @@
 import { useState } from "react";
 import ExpenseList from "./ExpenseList";
+import ExpenseFilter from "./ExpenseFilter";
 
 const App = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const [expenses, setExpenses] = useState([
-    { id: 1, description: "Buy a book", amount: 30, category: "Books" },
-    { id: 2, description: "Buy a pen", amount: 10, category: "Stationary" },
+    { id: 1, description: "aaa", amount: 30, category: "Utilities" },
+    { id: 2, description: "bbb", amount: 10, category: "Groceries" },
     {
       id: 3,
-      description: "Buy a laptop",
+      description: "ccc",
       amount: 300,
-      category: "Electronics",
+      category: "Entertainment",
     },
   ]);
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses;
 
   return (
     <div className="p-4">
+      <div className="mb-3">
+        <ExpenseFilter onSelect={(category) => setSelectedCategory(category)} />
+      </div>
       <ExpenseList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) =>
           setExpenses(expenses.filter((expense) => expense.id !== id))
         }
